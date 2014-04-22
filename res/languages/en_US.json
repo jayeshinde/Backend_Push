@@ -1,0 +1,18 @@
+{
+    "ForgotPassword": "Forgot Password?",
+    "Register": "Register",
+    "EmailAddress": "Email Address",
+    "Password" :"Password",
+    "RememberMe" :"Remember me",
+    "SignUp" :"Sign Up",
+    "Comment": "And start your campaigns",
+    "SignIn": "Sign In",
+    "FirstName" : "First Name",
+    "LastName" : "Last Name",
+    "DOB": "Date of birth",
+    "PhNumber":"Phone Number",
+    "ConfirmPassword":"Confirm Password"
+
+
+
+}

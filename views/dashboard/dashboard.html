@@ -1,0 +1,208 @@
+			<!-- Collect the nav links, forms, and other content for toggling -->
+  			<div class="collapse navbar-collapse">
+  				<ul class="nav navbar-nav user-menu navbar-right ">
+  					<li>
+              <a href="#" class="user dropdown-toggle" data-toggle="dropdown"><span class="username"><img src="assets/images/profile50x50.png" class="user-avatar" alt="">  Admin </span></a>
+    						<ul class="dropdown-menu">
+    							<li><a href="#profile"><i class="fa fa-user"></i> My Profile</a></li>
+    							<li class="divider"></li>
+    							<li><a href="#login" class="text-danger"><i class="fa fa-lock"></i> Logout</a></li>
+    						</ul>
+  						</li>
+  						</ul>
+  					</div><!-- /.navbar-collapse -->
+  				</nav> <!-- /.navbar -->
+
+  				<!-- .box-holder -->
+  				<div class="box-holder">
+
+  					<!-- .left-sidebar -->
+  					<div class="left-sidebar">
+  						<div class="sidebar-holder">
+  							<ul class="nav  nav-list">
+
+  								<!-- sidebar to mini Sidebar toggle -->
+  								<li class="nav-toggle">
+  									<button class="btn  btn-nav-toggle text-primary"><i class="fa fa-angle-double-left toggle-left"></i> </button>
+  								</li>
+
+  								<li class="active">
+                    <a href="#dashboard" data-original-title="Dashboard"><i class="fa fa-dashboard"></i><span class="hidden-minibar"> Dashboard </span></a>
+                  </li>
+
+  								<li>
+                    <a href="../campaigns/" data-original-title="Top Navbar"><i class="fa fa-indent"></i><span class="hidden-minibar"> Campaigns </span></a>
+                  </li>
+
+                  <li>
+                    <a href="faq.html" data-original-title="Top Navbar"><i class="fa fa-question"></i><span class="hidden-minibar"> FAQs </span></a>
+                  </li>
+
+                  <li>
+                    <a href="../settings/profile.html" data-original-title="Top Navbar"><i class="fa fa-cogs"></i><span class="hidden-minibar"> Settings </span></a>
+                  </li>
+
+  							</ul>
+  						</div>
+  					</div> <!-- /.left-sidebar -->
+
+  					<!-- .content -->
+  					<div class="content">
+
+  						<div class="row">
+  							<div class="col-mod-12">
+
+  								<ul class="breadcrumb">
+  									<li><a href="#dashboard">Dashboard</a></li>
+  									<li class="active">Overview</li>
+  								</ul>
+
+  								
+
+  								<h3 class="page-header"><i class="fa fa fa-dashboard"></i> Dashboard <i class="fa fa-info-circle animated bounceInDown show-info"></i> </h3>
+
+  								<blockquote class="page-information hidden">
+  									<p>
+  										Dashboard is an "Easy To Read" real-time user interface, showing a graphical presentation of the current status and historical trends of an organization’s key performance indicators to enable instantaneous and informed decisions to be made at a glance.
+  									</p>
+  								</blockquote>
+
+  							</div>
+  						</div>
+
+
+  						
+  						<!-- Charts -->
+  						<div class="row">
+  							<!-- Discrete Bar Chart -->
+  							<div class="col-md-4">
+                  <ul class="list-unstyled info-list">
+                    <li>
+                      <div class="info-box  bg-primary text-white">
+                        <div class="info-icon bg-primary-dark">
+                          <i class="fa fa-indent fa-4x"></i>
+                        </div>
+                        <div class="info-details">
+                          <h4>Total Campaigns   <span class="pull-right" id="reloadStatus">33</span></h4>
+                          <p>21 Inactive </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="info-box  bg-primary  text-white">
+                        <div class="info-icon bg-primary-dark">
+                          <i class="fa fa-user fa-4x"></i>
+                        </div>
+                        <div class="info-details">
+                          <h4>Total Advocates   <span class="pull-right">57</span></h4>
+                          <p>&nbsp</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="info-box  bg-primary  text-white">
+                        <div class="info-icon bg-primary-dark">
+                          <i class="fa fa-bullhorn fa-4x"></i>
+                        </div>
+                        <div class="info-details">
+                          <h4>Overlay Count   <span class="pull-right">103</span></h4>
+                          <p>&nbsp</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="info-box bg-primary text-white">
+                        <div class="info-icon bg-primary-dark">
+                          <i class="fa fa-check fa-4x"></i>
+                        </div>
+                        <div class="info-details">
+                          <h4>Total Shares   <span class="pull-right">2654</span></h4>
+                          <p>&nbsp</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+  							<!-- Pie chart -->
+  							<div class="col-md-8">
+  								<div class="row">
+  									<div id="chart1">
+                      <svg></svg>
+                    </div>
+  								</div>
+  							</div>
+  						</div>
+  						
+
+  						<div class="row">
+  							<div class="col-md-12">
+  								<div class="panel panel-cascade">
+  									<div class="panel-heading">
+  										<h3 class="panel-title">
+  											<i class="fa fa-indent"></i>
+  											Recent Campaigns
+  												<a class="pull-right" href="../campaigns/"> View All </a>
+  										</h3>
+  									</div>
+  									<div class="panel-body nopadding">
+  										<table class="table">
+  											<thead>
+  												<tr>
+  													<th><i class="fa fa-caret-right"></i> Campaign Name</th>
+  													<th><i class="fa fa-caret-right"></i> Start Date</th>
+  													<th><i class="fa fa-caret-right"></i> End Date</th>
+                            <th><i class="fa fa-caret-right"></i> Advocates</th>
+                            <th><i class="fa fa-caret-right"></i> Overlay Count</th>
+                            <th><i class="fa fa-caret-right"></i> Shares</th>
+                            <th><i class="fa fa-caret-right"></i> Clicks</th>
+  												</tr>
+  											</thead>
+  											<tr>
+  												<td>Motorola G 16 GB</td>
+                          <td>31 March 2014</td>
+                          <td>21 April 2014</td>
+                          <td>26</td>
+                          <td>65</td>
+                          <td>918</td>
+                          <td>515</td>
+  											</tr>
+                        <tr>
+                          <td>Motorola G 8 GB</td>
+                          <td>22 March 2014</td>
+                          <td>28 April 2014</td>
+                          <td>23</td>
+                          <td>53</td>
+                          <td>452</td>
+                          <td>241</td>
+                        </tr>
+                        <tr>
+                          <td>Motorola X 16 GB</td>
+                          <td>26 March 2014</td>
+                          <td>15 May 2014</td>
+                          <td>10</td>
+                          <td>21</td>
+                          <td>138</td>
+                          <td>211</td>
+                        </tr>
+  										</table>
+  										
+
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+
+
+  						
+  						<div class="footer">
+  							© 2014 <a href="#.">ReferralClix</a>
+  						</div>
+
+  					</div> <!-- /.content -->
+
+
+
+</div> <!-- /.box-holder -->
+</div><!-- /.site-holder -->
+

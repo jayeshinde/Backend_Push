@@ -1,0 +1,107 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Overlay | ReferralClix</title>
+		
+    <!-- Loading Bootstrap -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Stylesheets -->    
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css"> 
+
+    <link href="../assets/less/style.less" rel="stylesheet"  title="lessCss" id="lessCss">
+
+    <!-- Loading Custom Stylesheets -->    
+    <link href="../assets/css/custom.css" rel="stylesheet">
+		
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+      <style type="text/css">
+        body {
+          background: url(../images/motoBG.jpg) no-repeat center top; 
+        }
+        .number {
+          float: left;
+          display: block;
+          background: #CCC;
+          font-size: 22px;
+          height: 40px;
+          width: 40px;
+          padding: 5px 0 0 13px;
+          -moz-border-radius: 40px;
+          -webkit-border-radius: 40px;
+          border-radius: 40px; /* future proofing */
+          -khtml-border-radius: 40px; /* for old Konqueror browsers */
+          margin:15px 10px 10px 0; 
+        }
+      </style>
+  </head>
+  <body>
+      <!-- Modal -->
+      <div class="modal fade" id="overlay">
+        <div class="modal-dialog" style="width:900px;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Share your purchare with friends</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">                      
+                <div class="col-md-7">
+                  <span class="number">1</span> <h3>Refer friends to Motorola</h3>
+                  <p>Invite them via Facebook, Twitter or email</p>
+
+                  <div class="clearfix"></div>
+                  <span class="number">2</span> <h3>Promote your coupon</h3>
+                  <p>It's easy - Get upto 25% off for using it!</p>
+                </div>
+                <div class="col-md-5 pull-right">
+                  <img src="../images/moto-g.jpg">
+                </div>                      
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-6">
+                  <h4><i class="fa fa-envelope"></i> Invite by email</h4>
+                  <div class="form-group">
+                    <textarea class="form-control" rows="3" placeholder="Type a list of invitee email addresses with comma separated"></textarea>
+                  </div>
+                  <div class="form-group pull-right">
+                    <button class="btn btn-success">Invite</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h4><i class="fa fa-share"></i> Invite friends from Facebook, Twitter or Google+</h4>
+                  <div class="form-group">
+                    <textarea class="form-control" rows="3">I just got my Moto G. Get upto 25% off with coupon link http://www.motorola.com/?coupon=M16G</textarea>
+                  </div>
+                  <div class="form-group pull-right">
+                    <a class="btn btn-primary" href="#"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a class="btn btn-info" href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                    <a class="btn btn-danger" href="#"><i class="fa fa-google-plus"></i> Google+</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-footer">
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+
+<!-- Load JS here for Faster site load =============================-->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $('#overlay').modal({
+    show:true,
+  })
+</script>
+</body>
+</html>

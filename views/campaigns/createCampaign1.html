@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ReferralClix | Create Campaign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <!-- Loading Stylesheets -->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/smart_wizard.css" rel="stylesheet">
+    <link href="../assets/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Load JS here for Faster site load =============================-->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../assets/js/jquery-1.10.2.min.js"></script>
+    <script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Core Jquery File  =============================-->
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/jquery.smartWizard.js"></script>
+    <script src="../assets/js/smartWizard-custom.js"></script>
+    <script src="../assets/js/tooltips-popovers.js"></script>
+    <script src="../assets/js/toggles.min.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+
+      <script src="../js/html5shiv.js"></script>
+
+      <![endif]-->
+    <style type="text/css">
+        .swMain ul.anchor li a
+        {
+            width: 125px !important;
+            height: 40px !important;
+        }
+        .padding10px
+        {
+            padding: 10px;
+        }
+        .number
+        {
+            float: left;
+            display: block;
+            background: #CCC;
+            font-size: 22px;
+            height: 40px;
+            width: 40px;
+            padding: 5px 0 0 13px;
+            -moz-border-radius: 40px;
+            -webkit-border-radius: 40px;
+            border-radius: 40px; /* future proofing */
+            -khtml-border-radius: 40px; /* for old Konqueror browsers */
+            margin: 15px 10px 10px 0;
+        }
+        .modal
+        {
+            margin-top: 50px !important;
+        }
+    </style>
+    <script type="text/javascript">
+        function callFB() {
+            var x = document.getElementById('Heading_FB').value;
+            document.getElementById('Div_Head').innerHTML = x;
+            var y = document.getElementById('Post_FB').value;
+            document.getElementById('Div_Post').innerHTML = y;
+        }
+        function callGP() {
+            var x = document.getElementById('Heading_GP').value;
+            document.getElementById('Div_GHead').innerHTML = x;
+            var y = document.getElementById('Offer_GP').value;
+            document.getElementById('Div_GOffer').innerHTML = y;
+        }
+        function callTW() {
+            var x = document.getElementById('offer_Tweet').value;
+            document.getElementById('Div_Tweet').innerHTML = x;
+        }
+        $(document).ready(function () {
+            $('input').blur(function () {
+                setPreview();
+            });
+        });
+        function setPreview() {
+            var x = document.getElementById('input_tagline').value;
+            if (x != "")
+                document.getElementById('Div_tagline').innerHTML = x;
+            var y = document.getElementById('input_description').value;
+            if (y != "")
+                document.getElementById('Div_description').innerHTML = y;
+
+            var banner = $('input[name=banner]:checked').val();
+            var bennerImg = '<img src="../images/sample1.jpg">';
+            if (banner == "First")
+                bennerImg = '<img src="../images/sample1.jpg">';
+            else if (banner == "Second")
+                bennerImg = '<img src="../images/sample2.jpg">';
+            else if (banner == "Third")
+                bennerImg = '<img src="../images/sample3.jpg">';
+            else
+                bennerImg = '<img src="../images/sample1.jpg">';
+            document.getElementById('Div_banner').innerHTML = bennerImg;
+
+
+            var image = $('input[name=image]:checked').val();
+            var divImg = '<img src="../images/moto1.png" style="height: 100px; width: 100px;" />';
+            if (image == "First")
+                divImg = '<img src="../images/moto1.png" style="height: 100px; width: 100px;" />';
+            else if (image == "Second")
+                divImg = '<img src="../images/moto2.png" style="height: 100px; width: 100px;" />';
+            else if (image == "Third")
+                divImg = '<img src="../images/moto3.jpg" style="height: 100px; width: 120px;" />';
+            else
+                divImg = '<img src="../images/moto1.png" style="height: 100px; width: 100px;" />';
+            document.getElementById('Div_image').innerHTML = divImg;
+        }
+    </script>
+</head>
+<body>
+    <div class="site-holder">
+        <!-- this is a dummy text -->
+        <!-- .navbar -->
+        <nav class="navbar" role="navigation">
+
+
+
+  			<!-- Brand and toggle get grouped for better mobile display -->
+
+  			<div class="navbar-header">
+
+  				<a class="navbar-brand" href="#"><i class="fa fa-list btn-nav-toggle-responsive text-white"></i> <span class="logo">Referral<strong>Clix&nbsp;</strong><i class="fa fa-bookmark"></i></span></a>
+
+  			</div>
+
+  			
+
+  			<!-- Collect the nav links, forms, and other content for toggling -->
+
+  			 <div class="collapse navbar-collapse">
+
+          <ul class="nav navbar-nav user-menu navbar-right ">
+
+            <li>
+
+              <a href="#" class="user dropdown-toggle" data-toggle="dropdown"><span class="username"><img src="../images/profile50x50.png" class="user-avatar" alt="">  Admin </span></a>
+
+                <ul class="dropdown-menu">
+
+                  <li><a href="../settings/profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+
+                  <li class="divider"></li>
+
+                  <li><a href="../login/" class="text-danger"><i class="fa fa-lock"></i> Logout</a></li>
+
+                </ul>
+
+              </li>
+
+              </ul>
+
+            </div><!-- /.navbar-collapse -->
+
+  				</nav>
+        <!-- /.navbar -->
+        <!-- .box-holder -->
+        <div class="box-holder">
+            <!-- .left-sidebar -->
+            <div class="left-sidebar">
+                <div class="sidebar-holder">
+                    <ul class="nav nav-list">
+                        <!-- sidebar to mini Sidebar toggle -->
+                        <li class="nav-toggle">
+                            <button class="btn  btn-nav-toggle text-primary">
+                                <i class="fa fa-angle-double-left toggle-left"></i>
+                            </button>
+                        </li>
+                        <li><a href="../dashboard/" data-original-title="Dashboard"><i class="fa fa-dashboard">
+                        </i><span class="hidden-minibar">Dashboard </span></a></li>
+                        <li class="active"><a href="../campaigns/" data-original-title="Top Navbar"><i class="fa fa-indent">
+                        </i><span class="hidden-minibar">Campaigns </span></a></li>
+                        <li><a href="../dashboard/faq.html" data-original-title="Top Navbar"><i class="fa fa-question">
+                        </i><span class="hidden-minibar">FAQs </span></a></li>
+                        <li><a href="../settings/profile.html" data-original-title="Top Navbar"><i class="fa fa-cogs">
+                        </i><span class="hidden-minibar">Settings </span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.left-sidebar -->
+            <!-- .content -->
+            <div class="content">
+                <!-- /header -->
+                <div class="row">
+                    <div class="col-mod-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Campaign</a></li>
+                            <li class="active">Create Campaign</li>
+                            <!--<li class="active">BreadCrumb</li>-->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Demo Panel -->
+                <div class="col-md-12">
+                    <div class="panel panel-dat">
+                        <div class="panel-body nopadding tooltips">
+                            <!-- Smart Wizard -->
+                            <div id="wizard" class="swMain">
+                                <ul>
+                                    <li><a href="#step-1">
+                                        <!--<label class="stepNumber">
+                                            1</label>-->
+                                        <span class="stepDesc">1 Create </span></a></li>
+                                    <li><a href="#step-2">
+                                        <!--<label class="stepNumber">
+                                            2</label>-->
+                                        <span class="stepDesc">2 Offers </span></a></li>
+                                    <li><a href="#step-3">
+                                        <!--<label class="stepNumber">
+                                            3</label>-->
+                                        <span class="stepDesc">3 Configure </span></a></li>
+                                    <li><a href="#step-4">
+                                        <!--<label class="stepNumber">
+                                            4</label>-->
+                                        <span class="stepDesc">4 Conditions </span></a></li>
+                                    <li><a href="#step-5">
+                                        <!--<label class="stepNumber">
+                                            5</label>-->
+                                        <span class="stepDesc">5 Preview </span></a></li>
+                                    <li><a href="#step-6">
+                                        <!--<label class="stepNumber">
+                                            6</label>-->
+                                        <span class="stepDesc">6 Get Code </span></a></li>
+                                </ul>
+                                <div id="step-1">
+                                    <h2 class="StepTitle">
+                                        Campaign Details</h2>
+                                    <div class="panel">
+                                        <div class="col-md-8" style="padding: 10px 30px;">
+                                            <table style="width: 100%;">
+                                                <tr style="margin-bottom: 10px;">
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Campaign Name</label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Campaign Type</label>
+                                                    </td>
+                                                    <td>
+                                                        <select style="margin-bottom: 10px;" class="form-control">
+                                                            <option>Select</option>
+                                                            <option>Post Purchase</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Product Name</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Product Name for which campaign is created" data-placement="right">
+                                                            <input type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Product Unique Id</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Product Unique Id for which campaign is created" data-placement="right">
+                                                            <input type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Start Date</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Start Date for which campaign is created" data-placement="right">
+                                                            <input type="text" name="fromDate" id="fromDate" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            End Date</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="End Date for which campaign is created" data-placement="right">
+                                                            <input type="text" name="toDate" id="toDate" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <!--tr>
+
+                                                    <td>
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        <div class="form-group">
+
+                                                            <button type="submit" class="btn btn-success pull-right" style="margin-bottom: 15px;">
+
+                                                                Create Campaign</button>
+
+                                                        </div>
+
+                                                    </td>
+
+                                                </tr -->
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-2">
+                                    <h2 class="StepTitle">
+                                        Offer Details</h2>
+                                    <div class="panel">
+                                        <div class="col-md-8" style="padding: 10px 30px;">
+                                            <table style="width: 100%;">
+                                                <tr style="margin-bottom: 10px;">
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Offer Banner Image</label>
+                                                    </td>
+                                                    <td style="height: 30px;">
+                                                        <a data-original-title="Image used in overlay message" data-placement="right">
+                                                            <input id="input_banner" type="text" style="width: 250px; display: inline; margin-bottom: 10px;" class="form-control"
+                                                                style="margin-bottom: 10px;" />
+                                                        </a><a href="#" data-toggle="modal" data-target="#t_and_c_m">Select Banner From List</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Offer Tag Line</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Title used in overlay message" data-placement="right">
+                                                            <input id="input_tagline" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Offer Detail</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Description shown in facebook message and overlay message"
+                                                            data-placement="right">
+                                                            <input id="input_description" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Offer Image</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Image shown in facebook message and overlay message" data-placement="right">
+                                                            <input id="input_image" type="text" style="width: 250px; display: inline; margin-bottom: 10px;" class="form-control"
+                                                                style="margin-bottom: 10px;" />
+                                                        </a><a href="#" data-toggle="modal" data-target="#second_m">Select Image From List</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Coupon Code for User</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="User will receive this coupon code on share/invite" data-placement="right">
+                                                            <input id="input_usercode" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class=" control-label">
+                                                            Coupon Code for Friend</label>
+                                                    </td>
+                                                    <td>
+                                                        <a data-original-title="Friend will receive this coupon code" data-placement="right">
+                                                            <input id="input_friendcode" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-success pull-right" style="margin-bottom: 15px;">
+                                                                Save Campaign</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-3">
+                                    <h2 class="StepTitle">
+                                        Messaging Details</h2>
+                                    <div class="panel">
+                                        <div class="col-md-12" style="padding: 10px 10px; height: 300px;">
+                                            <ul class="nav nav-tabs" id="myTab">
+                                                <li class="active"><a data-toggle="tab" tabindex="-1" href="#fb">Facebook</a></li>
+                                                <li><a data-toggle="tab" tabindex="-1" href="#tweet">Twitter</a></li>
+                                                <li><a data-toggle="tab" tabindex="-1" href="#gp">Google +</a></li>
+                                                <li><a data-toggle="tab" tabindex="-1" href="#et">Email Template</a></li>
+                                            </ul>
+                                            <div class="tab-content" id="myTabContent">
+                                                <div id="fb" class="tab-pane fade active in">
+                                                    <div class="" style="padding: 10px 30px;">
+                                                        <table style="display: inline; float: left; margin-right:20px;">
+                                                            <tr style="margin-bottom: 10px;">
+                                                                <td style="width: 30%; vertical-align: top;">
+                                                                    <label class=" control-label padding10px">
+                                                                        Offer Title</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Facebook Offer Title" data-placement="right">
+                                                                        <input id="Heading_FB" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="margin-bottom: 10px;">
+                                                                <td style="width: 30%; vertical-align: top;">
+                                                                    <label class=" control-label padding10px">
+                                                                        Offer Details</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Facebook Offer Details" data-placement="right">
+                                                                        <input id="Post_FB" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            <!--<tr style="margin-bottom: 10px;">
+                                                                <td>
+                                                                    <label class=" control-label padding10px">
+                                                                         Offer Image</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Facebook Offer Image" data-placement="right">
+                                                                        <input type="file" class="form-control" style="margin-bottom: 10px;" />
+                                                                    </a>
+                                                                </td>
+                                                            </tr>-->
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <button onclick="callFB();" type="button" class="btn btn-success pull-right" style="margin-bottom: 15px;
+                                                                            margin-left: 15px;">
+                                                                            Preview</button>
+                                                                        <button type="submit" class="btn btn-success pull-right" style="margin-bottom: 15px;">
+                                                                            Save</button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <div id="Div_Facebook">
+                                                            <div class="userAvatar"><img src="../images/avatar.jpg"></div>
+                                                            <div class="fbConentent">
+                                                                <h5>Facebook User</h5>
+                                                                <p>This is something worth sharing... Check it out!</p>
+                                                                <div class="fbMessege">
+                                                                    <img src="../images/shareimg.jpg" />
+                                                                    <div>                                                                        
+                                                                        <h5>MOTO G 16GB</h5>
+                                                                        <p>
+                                                                            <span id="Div_Head">This is sample post on facebook you can edit in textbox.</span>
+                                                                            <br>
+                                                                            <span id="Div_Post">please edit post and update</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                                <p class="like"><a href="#">Like</a> . <a href="#">Comment</a> . <a href="#">Share</a> . <span><a href="#">3 hours ago</a></span></p>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- div id="Div_Facebook" style="display: inline-block; margin-left: 20px; padding: 20px;
+                                                            position: absolute; width: 450px;">
+                                                            <div style="display: inline; float: left;">
+                                                                <img src="../images/moto-g.jpg" class="user-avatar" style="height: 50px; width: 50px;
+                                                                    border: 1px solid; border-radius: 5px;" alt="">
+                                                            </div>
+                                                            <div style="display: inline; float: left; padding: 5px; position: absolute;">
+                                                                <span style="color: #3B5998; font-weight: bold;">Facebook UserName</span>
+                                                            </div>
+                                                            <div style="display: inline-block; width: 450px;">
+                                                                <div id="Div_Head" style="padding-top: 5px; margin-top: 10px;">
+                                                                    Post Heading</div>
+                                                                <div id="Div_Post" style="padding-top: 5px;">
+                                                                    This is sample post on facebook you can edit in textbox. please edit post and update</div>
+                                                                <div style="color: #3B5998; padding-top: 5px;">
+                                                                    Like . Comment . Promote . Share</div>
+                                                            </div 
+                                                        </div -->
+                                                    </div>
+                                                </div>
+                                                <div id="tweet" class="tab-pane fade">
+                                                    <div class="" style="padding: 10px 30px; width: 600px;">
+                                                        <table style="width: 70%; display: inline; float: left;">
+                                                            <!--<tr style="margin-bottom: 10px;">
+                                                                <td>
+                                                                    <label class=" control-label padding10px  " >
+                                                                         Offer Title</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Twitter Offer Title" data-placement="right">
+                                                                        <input id="title_Twitter" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                                    </a>
+                                                                </td>
+                                                            </tr>-->
+                                                            <tr style="margin-bottom: 10px;">
+                                                                <td style="width: 30%; vertical-align: top;">
+                                                                    <label class=" control-label padding10px">
+                                                                        Offer Details (Tweet)</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Twitter Offer Details" data-placement="right">
+                                                                        <textarea id="offer_Tweet" class="form-control" style="margin-bottom: 10px;" rows="4"> </textarea>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <button onclick="callTW();" type="button" class="btn btn-success pull-right" style="margin-bottom: 15px;
+                                                                            margin-left: 15px;">
+                                                                            Preview</button>
+                                                                        <button type="submit" class="btn btn-success pull-right" style="margin-bottom: 15px;">
+                                                                            Save</button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <div id="Div_Twitter" style="display: inline-block; margin-left: 20px; padding: 20px;
+                                                            position: absolute; width: 450px;">
+                                                            <div style="display: inline; float: left;">
+                                                                <img src="../images/moto-g.jpg" class="user-avatar" style="height: 50px; width: 50px;
+                                                                    border: 1px solid; border-radius: 5px;" alt="">
+                                                            </div>
+                                                            <div style="display: inline; float: left; padding: 5px; position: absolute;">
+                                                                <span style="color: #292F33; font-weight: bold;">Twitter UserName</span> <span style="color: #8899A6;">
+                                                                    @user_name</span>
+                                                                <div id="Div_Tweet" style="padding-top: 5px;">
+                                                                    This is sample tweet you can edit in textbox. max size of tweet is 140 characters.
+                                                                    please edit tweet and update</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="gp" class="tab-pane fade">
+                                                    <div class="" style="padding: 10px 30px; width: 600px;">
+                                                        <table style="width: 70%; display: inline; float: left;">
+                                                            <tr style="margin-bottom: 10px;">
+                                                                <td style="width: 30%; vertical-align: top;">
+                                                                    <label class=" control-label padding10px">
+                                                                        Offer Title</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Google + Offer Title" data-placement="right">
+                                                                        <input id="Heading_GP" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="margin-bottom: 10px;">
+                                                                <td style="width: 30%; vertical-align: top;">
+                                                                    <label class=" control-label padding10px">
+                                                                        Offer Details</label>
+                                                                </td>
+                                                                <td>
+                                                                    <a data-original-title="Google + Offer Details" data-placement="right">
+                                                                        <input id="Offer_GP" type="text" class="form-control" style="margin-bottom: 10px;" />
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <button type="button" onclick="callGP();" class="btn btn-success pull-right" style="margin-bottom: 15px;
+                                                                            margin-left: 15px;">
+                                                                            Preview</button>
+                                                                        <button type="submit" class="btn btn-success pull-right" style="margin-bottom: 15px;">
+                                                                            Save</button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <div id="Div1" style="display: inline-block; margin-left: 20px; padding: 20px; position: absolute;
+                                                            width: 450px;">
+                                                            <div style="display: inline; float: left;">
+                                                                <img src="../images/moto-g.jpg" class="user-avatar" style="height: 50px; width: 50px;
+                                                                    border: 1px solid; border-radius: 30px;" alt="">
+                                                            </div>
+                                                            <div style="display: inline; float: left; padding: 5px; position: absolute;">
+                                                                <span style="color: Black; font-weight: bold;">FirstName LastName</span>
+                                                            </div>
+                                                            <div style="display: inline-block; width: 450px;">
+                                                                <div id="Div_GHead" style="padding-top: 5px; margin-top: 10px;">
+                                                                    Post Heading</div>
+                                                                <div id="Div_GOffer" style="padding-top: 5px;">
+                                                                    This is sample post on google plus you can edit in textbox. please edit post and
+                                                                    update</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="et" class="tab-pane fade">
+                                                    <p>
+                                                        Email Template to go here</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-4">
+                                    <h2 class="StepTitle">Campaign Condition</h2>
+                                    <div class="panel toggle-light" style="height: 300px;">
+                                        <h4>Conditions to display campaign</h4>
+                                        <hr>
+                                        <div class="col-md-4">
+                                            <div class="form-inline">
+                                              <div class="form-group">
+                                                <label class="control-label pull-left">Only allow</label>
+                                                <span class="col-xs-3" style="margin-top:-7px;"><input id="couponsLimit" type="text" class="form-control input-sm" value="20" disabled></span>
+                                                <label class="control-label pull-left">coupons per day</label>
+                                              </div>
+                                            </div>
+
+                                            <div class="form-inline">
+                                              <div class="form-group">
+                                                <label class="control-label pull-left">Campaign is only for product</label>
+                                                <span class="col-xs-3" style="margin-top:-7px;"><input type="text" class="form-control input-sm" id="productName" value="MOTOX220" disabled></span>
+                                              </div>
+                                            </div>
+
+                                            <div class="form-inline">
+                                              <div class="form-group">
+                                                <label class="control-label pull-left">Shopping cart total should be more than</label>
+                                                <span class="col-xs-3" style="margin-top:-7px;"><input type="text" class="form-control input-sm" id="totalAmt" value="150" disabled></span>
+                                                <label class="control-label pull-left">USD</label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="toggle on" data-field="couponsLimit"></div>
+                                            <div class="toggle" data-field="productName"></div>
+                                            <div class="toggle" data-field="totalAmt"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-5">
+                                    <h2 class="StepTitle">
+                                        Preview Campaign</h2>
+                                    <div class="panel">
+                                        <div class="col-md-8" style="padding: 10px 30px; width: 100%;text-align: center;">
+                                            <h4 class="modal-title">
+                                                <div id="Div_tagline" style="padding:20px;">
+                                                Tagline Of Campaign
+                                                </div>
+                                            </h4>
+                                            <div id="Div_banner" style="padding:20px;">
+                                                <img src="../images/sample1.jpg">
+                                            </div>
+                                            <div id="Div_description" style="padding:20px;">
+                                                Description Of Campaign provided in offers tab
+                                            </div>
+                                            <div id="Div_image" style="padding:20px;">
+                                                <img src="../images/moto1.png" height="100px;" width="100px;" />
+                                            </div>
+                                            <div class="form-group " style="padding:20px;">
+                                                <a class="btn btn-primary" href="#"><i class="fa fa-facebook"></i>Facebook</a> <a
+                                                    class="btn btn-info" href="#"><i class="fa fa-twitter"></i>Twitter</a> <a class="btn btn-danger"
+                                                        href="#"><i class="fa fa-google-plus"></i>Google+</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-6">
+                                    <h2 class="StepTitle">
+                                        Get Code</h2>
+                                    <div class="panel" style="height: 300px;">
+                                        <div class="col-md-8" style="padding: 10px 30px;">
+                                            <h4>
+                                                Click <a target="_blank" href="../assets/js/core.js">here</a> to get javascript
+                                                code for your campaign to integrate in your system.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End SmartWizard Content -->
+                        </div>
+                        <!-- /panel body -->
+                    </div>
+                </div>
+                <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    ×</button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    Select Banner Image</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input  type="radio" name="banner" value="First"><img src="../images/sample1.jpg" class="user-avatar"
+                                    alt="" style="height: 70px; width: 450px; padding: 10px;" /><br />
+                                <input  type="radio" name="banner" value="Second" /><img src="../images/sample2.jpg"
+                                    class="user-avatar" alt="" style="height: 70px; width: 450px; padding: 10px;"><br />
+                                <input  type="radio" name="banner" value="Third" /><img src="../images/sample3.jpg" class="user-avatar"
+                                    style="height: 70px; width: 450px; padding: 10px;" alt="" /><br />
+                                <input  type="radio" name="banner" value="Fourth" />Upload From Computer<input type="file"
+                                    class="" style="display: inline;" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                    Select</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <div class="modal fade" id="second_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    ×</button>
+                                <h4 class="modal-title" id="H1">
+                                    Select Offer Image</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input type="radio" name="image" value="First"><img src="../images/moto1.png" class="user-avatar"
+                                    alt="" style="height: 100px; width: 100px; padding: 10px;"><br />
+                                <input type="radio" name="image" value="Second"><img src="../images/moto2.png" class="user-avatar"
+                                    alt="" style="height: 100px; width: 100px; padding: 10px;"><br />
+                                <input type="radio" name="image" value="Third"><img src="../images/moto3.jpg" class="user-avatar"
+                                    style="height: 100px; width: 120px; padding: 10px;" alt=""><br />
+                                <input type="radio" name="image" value="Fourth">Upload From Computer<input type="file"
+                                    class="" style="display: inline;" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                    Select</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.content -->
+                <!-- .right-sidebar -->
+                <!-- /.right-sidebar-holder -->
+            </div>
+            <!-- /.right-sidebar -->
+            <!-- /rightside bar -->
+        </div>
+        <!-- /.box-holder -->
+    </div>
+    <!-- /.site-holder -->
+    <script type="text/javascript">
+        $(document).ready(function(){            
+            $("#fromDate, #toDate").datepicker();
+            $('.toggle').toggles();
+            $('.toggle').on('toggle', function (e, active) {
+                var field = $(this).attr('data-field');
+                if (active) {
+                    $('#'+field).prop('disabled', false);
+                } else {
+                    $('#'+field).prop('disabled', true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

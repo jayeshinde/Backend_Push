@@ -1,0 +1,241 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Campaigns | ReferralClix</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Loading Bootstrap -->
+		<link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+
+		<!-- Loading Stylesheets -->    
+		<link href="../assets/css/font-awesome.css" rel="stylesheet">
+		<link href="../assets/css/style.css" rel="stylesheet" type="text/css"> 
+
+		<link href="../assets/less/style.less" rel="stylesheet"  title="lessCss" id="lessCss">
+
+		<!-- Loading Custom Stylesheets -->    
+		<link href="../assets/css/custom.css" rel="stylesheet">
+
+		<link rel="shortcut icon" href="../images/favicon.ico">
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+  	<div class="site-holder">
+  		<!-- this is a dummy text -->
+  		<!-- .navbar -->
+  		<nav class="navbar" role="navigation">
+
+  			<!-- Brand and toggle get grouped for better mobile display -->
+  			<div class="navbar-header">
+  				<a class="navbar-brand" href="#"><i class="fa fa-list btn-nav-toggle-responsive text-white"></i> <span class="logo">Referral<strong>Clix</strong> <i class="fa fa-bookmark"></i></span></a>
+  			</div>
+
+  			<!-- Collect the nav links, forms, and other content for toggling -->
+  			<div class="collapse navbar-collapse">
+  				<ul class="nav navbar-nav user-menu navbar-right ">
+  					<li>
+              <a href="#" class="user dropdown-toggle" data-toggle="dropdown"><span class="username"><img src="../images/profile50x50.png" class="user-avatar" alt="">  Admin </span></a>
+    						<ul class="dropdown-menu">
+    							<li><a href="../settings/profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+    							<li class="divider"></li>
+    							<li><a href="../login/" class="text-danger"><i class="fa fa-lock"></i> Logout</a></li>
+    						</ul>
+  						</li>
+  						</ul>
+  					</div><!-- /.navbar-collapse -->
+  				</nav> <!-- /.navbar -->
+
+  				<!-- .box-holder -->
+  				<div class="box-holder">
+
+  					<!-- .left-sidebar -->
+  					<div class="left-sidebar">
+  						<div class="sidebar-holder">
+  							<ul class="nav  nav-list">
+
+  								<!-- sidebar to mini Sidebar toggle -->
+  								<li class="nav-toggle">
+  									<button class="btn  btn-nav-toggle text-primary"><i class="fa fa-angle-double-left toggle-left"></i> </button>
+  								</li>
+
+  								<li>
+                    <a href="../dashboard/" data-original-title="Dashboard"><i class="fa fa-dashboard"></i><span class="hidden-minibar"> Dashboard </span></a>
+                  </li>
+
+  								<li class="active">
+                    <a href="../campaigns/" data-original-title="Top Navbar"><i class="fa fa-indent"></i><span class="hidden-minibar"> Campaigns </span></a>
+                  </li>
+
+                  <li>
+                    <a href="../dashboard/faq.html" data-original-title="Top Navbar"><i class="fa fa-question"></i><span class="hidden-minibar"> FAQs </span></a>
+                  </li>
+
+                  <li>
+                    <a href="../settings/profile.html" data-original-title="Top Navbar"><i class="fa fa-cogs"></i><span class="hidden-minibar"> Settings </span></a>
+                  </li>
+
+  							</ul>
+  						</div>
+  					</div> <!-- /.left-sidebar -->
+
+  					<!-- .content -->
+  					<div class="content">
+
+
+
+  						<div class="row">
+  							<div class="col-mod-12">
+
+  								<ul class="breadcrumb">
+  									<li><a href="../dashboard/">Dashboard</a></li>
+  									<li class="active">Campaigns</li>
+  								</ul>
+
+  								<h3 class="page-header"><i class="fa fa fa-indent"></i> Campaigns </h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <form class="form-inline pull-left" role="form">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">From</label>
+                      <input class="form-control" type="text" name="fromDate" id="fromDate" placeholder="2/16/2014" />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">To</label>
+                      <input class="form-control" type="text" name="toDate" id="toDate" placeholder="3/16/2014" />
+                    </div>
+
+                    <div class="form-group">
+                      <select class="form-control" name="status">
+                        <option>All</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-primary">Filter</button>
+                    </div>
+                  </form>
+
+                  <form class="form-inline col-xs-2 pull-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                  </form>
+
+                  <a class="btn btn-success btn-lg pull-right" href="../campaigns/createCampaign1.html"> <i class="fa fa-plus"></i> Add New Campaign </a>
+                  
+                  <div class="clearfix"></div>
+
+                  <hr>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+  								<div class="panel panel-cascade">
+  									<div class="panel-body nopadding">
+  										<table class="table">
+                        <thead>
+                          <tr>
+                            <th><i class="fa fa-caret-right"></i> Campaign Name</th>
+                            <th><i class="fa fa-caret-right"></i> Start Date</th>
+                            <th><i class="fa fa-caret-right"></i> End Date</th>
+                            <th><i class="fa fa-caret-right"></i> Advocates</th>
+                            <th><i class="fa fa-caret-right"></i> Overlay Count</th>
+                            <th><i class="fa fa-caret-right"></i> Shares</th>
+                            <th><i class="fa fa-caret-right"></i> Clicks</th>
+                          </tr>
+                        </thead>
+                        <tr>
+                          <td><a href="details.html">Motorola G 16 GB</a></td>
+                          <td>31 March 2014</td>
+                          <td>21 April 2014</td>
+                          <td>26</td>
+                          <td>65</td>
+                          <td>918</td>
+                          <td>515</td>
+                        </tr>
+                        <tr>
+                          <td><a href="details.html">Motorola G 8 GB</a></td>
+                          <td>22 March 2014</td>
+                          <td>28 April 2014</td>
+                          <td>23</td>
+                          <td>53</td>
+                          <td>452</td>
+                          <td>241</td>
+                        </tr>
+                        <tr>
+                          <td><a href="details.html">Motorola X 16 GB</a></td>
+                          <td>26 March 2014</td>
+                          <td>15 May 2014</td>
+                          <td>10</td>
+                          <td>21</td>
+                          <td>138</td>
+                          <td>211</td>
+                        </tr>
+                      </table>
+                    </div>
+                      <ul class="pagination pull-right">
+                        <li class="disabled"><a href="#">«</a></li>
+                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">»</a></li>
+                      </ul>
+  								</div>
+  							</div>
+  						</div>
+
+
+  						
+  						<div class="footer">
+  							© 2014 <a href="#.">ReferralClix</a>
+  						</div>
+
+  					</div> <!-- /.content -->
+
+
+
+</div> <!-- /.box-holder -->
+</div><!-- /.site-holder -->
+
+
+
+<!-- Load JS here for Faster site load =============================-->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="../assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/application.js"></script>
+
+<script src="../assets/js/theme-options.js"></script>
+
+<script type="text/javascript">
+  $( "#fromDate, #toDate" ).datepicker();
+</script>
+
+<!-- Core Jquery File  =============================-->
+<script src="../assets/js/core.js"></script>
+
+</body>
+</html>

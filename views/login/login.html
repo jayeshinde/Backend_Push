@@ -1,0 +1,36 @@
+
+              <div class="row" style="margin-top:20px">
+                <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-4 col-md-offset-4">
+                <form ng-submit="login()">
+                  <fieldset>
+                    <h2>{{t.SignIn}}</h2>
+                    <div class="form-group">
+                      <input type="email" name="email" id="email" class="form-control" placeholder={{t.EmailAddress}} required="email" ng-model="data.email">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="password" id="password" class="form-control" placeholder={{t.Password}} required ng-model="data.password">
+                    </div>
+                    <span class="button-checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="chkFacebook" id="chkFacebook" checked="checked">
+                        {{t.RememberMe}}
+                      </label>
+                      <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+                      <a href="#forget" class="btn btn-link pull-right">{{t.ForgotPassword}}</a>
+                    </span>
+                    <hr class="colorgraph">
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-success btn-block" value="Sign In">
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="#register" class="btn btn-primary btn-block">{{t.Register}}</a>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+
+            </div>    
+        </div>
+    </div>
