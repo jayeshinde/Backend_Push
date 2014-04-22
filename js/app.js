@@ -7,6 +7,7 @@ refclix.constant("$config", {
     sessionTokenKey : "sessionToken",
     userName : "userName",
     translationFolder : "res/languages",
+    loginServiceUrl:"https://1-dot-restthink120.appspot.com/_ah/api/userendpoint/v1/signIn",
     defaultLanguage : "en_US"
 });
 

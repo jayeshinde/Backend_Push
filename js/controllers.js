@@ -1,46 +1,46 @@
-refclix.controller("loginController", ["$scope", "$location",
-    function ($scope, $location) {
+refclix.controller("loginController", ["$scope", "$location","$http","$config",
+    function ($scope, $location, $http, $config) {
 
         $scope.data = { email : null, password : null };
 
         $scope.login = function() {
 
             if($scope.isValid()){
-//                $auth.login({
-//                    email : $scope.data.email,
-//                    password : $scope.data.password
-//                }, successCallback, errorCallback);
-                var url ='https://1-dot-restthink120.appspot.com/_ah/api/userendpoint/v1/signIn';
                 var myObject = new Object();
                 myObject.email = $scope.data.email;
                 myObject.password = $scope.data.password;
 
-  //  alert(JSON.stringify(myObject));
-//                $http({ url: url ,
-//                    method: "POST",
-//                    data: JSON.stringify(myObject) })
-//                    .then(function(response) { //console.log(response);
-//                        alert(response);
-//                        $location.path('/dashboard'); },
-//                    function(response) { // optional // failed
-//                   // console.log(response);
-//                        alert(response);} );
+                $http({ url: $config.loginServiceUrl ,
+                    method: "POST",
+                    data: JSON.stringify(myObject) })
+                    .then(function(response) { //console.log(response);
 
-                $.ajax({
-                    type: "POST",
-                    url:url,
-                    contentType: "application/json; charset=utf-8",
-                    data:JSON.stringify(myObject),
-                    success:function(data) {
 
-                        $location.path("/dashboard");
-                       // alert(JSON.stringify(data));
+                        if(response.data.errorMessage)
+                        {
+                            alert(response.data.errorMessage);
+                        }else{
+                         $location.path("/dashboard");}
                     },
-                    error:function(data){
-                        alert(JSON.stringify(data));
-                    }
+                    function(response) { // optional // failed
+                   // console.log(response);
+                        alert("No Internet Connection Avaliable");} );
 
-                });
+//                $.ajax({
+//                    type: "POST",
+//                    url:url,
+//                    contentType: "application/json; charset=utf-8",
+//                    data:JSON.stringify(myObject),
+//                    success:function(data) {
+//
+//                        $location.path("/dashboard");
+//                       // alert(JSON.stringify(data));
+//                    },
+//                    error:function(data){
+//                        alert(JSON.stringify(data));
+//                    }
+
+
 
 
             }
@@ -109,11 +109,14 @@ refclix.controller("registrationController", ["$scope", "$location",
 
         $scope.OnRegister = function() {
             $location.path("/finished");
-//            $auth.login({
-//                email : $scope.data.email,
-//                password : $scope.data.password
-//            }, successCallback, errorCallback);
         };
 
 
-    }]);
+}]);
+
+
+refclix.controller("dashboardController", ["$scope", "$location",
+    function ($scope, $location) {
+
+
+}]);

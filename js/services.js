@@ -29,15 +29,3 @@ refclix.service("$t", ["$http", "$config", function($http, $config){
 }]);
 
 
-//refclix.service("$auth", ["$location", "$config", function($location, $config){
-//    var auth = {
-//        // performs full authentication
-//        login: function (credentials) {
-//
-//
-//
-//        }
-//
-//    };
-//    return auth;
-//}]);
