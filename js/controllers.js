@@ -1,29 +1,49 @@
 refclix.controller("loginController", ["$scope", "$location","$http","$config",
     function ($scope, $location, $http, $config) {
 
-        $scope.data = { email : null, password : null };
+        $scope.data = { email : localStorage.getItem("email"), password : localStorage.getItem("password") };
+        $scope.rememberme = true;
+        alert(localStorage.getItem("email"));
+        alert(localStorage.getItem("password"));
 
+        $scope.OnSaveUserDetails = function()
+        {
+            alert(!$scope.rememberme);
+        };
         $scope.login = function() {
 
             if($scope.isValid()){
                 var myObject = new Object();
                 myObject.email = $scope.data.email;
                 myObject.password = $scope.data.password;
-
+                //alert(JSON.stringify(myObject));
                 $http({ url: $config.loginServiceUrl ,
                     method: "POST",
                     data: JSON.stringify(myObject) })
                     .then(function(response) { //console.log(response);
-
-
-                        if(response.data.errorMessage)
+                  //      alert(JSON.stringify(response));
+                        if(typeof(Storage)!=="undefined")
                         {
-                            alert(response.data.errorMessage);
-                        }else{
-                         $location.path("/dashboard");}
+                    //        alert(JSON.stringify( response.data.sessionId));
+
+                            if(response.data.errorMessage)
+                            {
+                                alert(response.data.errorMessage);
+                            }else
+                            {
+                                sessionStorage.sessionId =  JSON.stringify( response.data.sessionId);
+                                if($scope.rememberme)
+                                {alert('save user info');
+                                    localStorage.setItem("email",$scope.data.email);
+                                    localStorage.setItem("password",$scope.data.password);
+                                }
+                                $location.path("/dashboard");}
+                        }
+
                     },
                     function(response) { // optional // failed
                    // console.log(response);
+                        alert(JSON.stringify(response));
                         alert("No Internet Connection Avaliable");} );
 
 //                $.ajax({
