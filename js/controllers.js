@@ -3,8 +3,8 @@ refclix.controller("loginController", ["$scope", "$location","$http","$config",
 
         $scope.data = { email : localStorage.getItem("email"), password : localStorage.getItem("password") };
         $scope.rememberme = true;
-        alert(localStorage.getItem("email"));
-        alert(localStorage.getItem("password"));
+//        alert(localStorage.getItem("email"));
+//        alert(localStorage.getItem("password"));
 
         $scope.OnSaveUserDetails = function()
         {
@@ -21,7 +21,7 @@ refclix.controller("loginController", ["$scope", "$location","$http","$config",
                     method: "POST",
                     data: JSON.stringify(myObject) })
                     .then(function(response) { //console.log(response);
-                  //      alert(JSON.stringify(response));
+                       //alert(JSON.stringify(response));
                         if(typeof(Storage)!=="undefined")
                         {
                     //        alert(JSON.stringify( response.data.sessionId));
@@ -32,8 +32,12 @@ refclix.controller("loginController", ["$scope", "$location","$http","$config",
                             }else
                             {
                                 sessionStorage.sessionId =  JSON.stringify( response.data.sessionId);
+                               // $scope.data.username = JSON.stringify( );
+                                //localStorage.setItem("username",response.data.firstName);
+
                                 if($scope.rememberme)
-                                {alert('save user info');
+                                {
+                                    //alert('save user info');
                                     localStorage.setItem("email",$scope.data.email);
                                     localStorage.setItem("password",$scope.data.password);
                                 }
@@ -101,42 +105,5 @@ refclix.controller("loginController", ["$scope", "$location","$http","$config",
         };
 
 
-        }]);
+ }]);
 
-
-refclix.controller("registrationController", ["$scope", "$location",
-    function ($scope, $location) {
-
-        //$scope.data = { email : null, password : null };
-
-        $scope.OnContinue = function() {
-            $location.path("/register2");
-//            $auth.login({
-//                email : $scope.data.email,
-//                password : $scope.data.password
-//            }, successCallback, errorCallback);
-        };
-
-
-        // Call Back Methods
-        var successCallback = function () {
-            $location.path("/register2");
-        };
-        var errorCallback = function () {
-
-        };
-
-
-        $scope.OnRegister = function() {
-            $location.path("/finished");
-        };
-
-
-}]);
-
-
-refclix.controller("dashboardController", ["$scope", "$location",
-    function ($scope, $location) {
-
-
-}]);
